@@ -4,16 +4,22 @@ const User = require('../db/users');
 
 router.route('/')
     .get((req, res) => {
-        User.find({}, (err, docs) => {
-            if(err) {
-                res.statusCode = 500;
-                res.end();
-            }
-            else {
-                res.statusCode = 200;
-                res.send(docs);
-            }
-        });
+        if(req.esAdmin){
+            User.find({}, (err, docs) => {
+                if(err) {
+                    res.statusCode = 500;
+                    res.end();
+                }
+                else {
+                    res.statusCode = 200;
+                    res.send(docs);
+                }
+            });
+        } else{
+            res.statusCode = 401;
+            res.end();
+        }
+
     })
     .post(async function (req, res) {
         let newUser = req.body;

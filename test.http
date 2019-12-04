@@ -2,12 +2,12 @@ POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-      "nombre": "Edgar",
-      "apellido": "Medina",
-      "password": "soyRule",
-      "expediente": "715468",
+      "nombre": "Omar",
+      "apellido": "Soto",
+      "password": "elOmi",
+      "expediente": "711111",
       "carrera": "Ingeniería en Sistemas Computacionales",
-      "email": "is715468@iteso.mx"
+      "email": "ie711111@iteso.mx"
 }
 
 ###
@@ -16,12 +16,12 @@ POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-      "nombre": "Mauricio",
-      "apellido": "Duran",
-      "password": "mduranp",
-      "expediente": "716122",
+      "nombre": "Anahí",
+      "apellido": "Santana",
+      "password": "aSantana",
+      "expediente": "715123",
       "carrera": "Ingeniería en Sistemas Computacionales",
-      "email": "is716122@iteso.mx"
+      "email": "is715123@iteso.mx"
 }
 
 
@@ -52,11 +52,11 @@ POST http://localhost:3000/api/login
 Content-Type: application/json
 
 {
-    "correo":"t@t.com",
-    "password":"123456"
+    "email":"is715468@iteso.mx",
+    "password":"soyRule"
 }
 
 ###
 
-GET http://localhost:3000/api/products
-x-auth-user: QFJlp7q1lz-5ddcc8e52bad2f06a8ded8b9
+GET http://localhost:3000/api/users
+x-auth-user: thrlFkBRZu-1
