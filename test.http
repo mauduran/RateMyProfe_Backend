@@ -2,6 +2,20 @@ POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
+      "nombre": "Edgar",
+      "apellido": "Medina",
+      "password": "soyRule",
+      "expediente": "715468",
+      "carrera": "Ingeniería en Sistemas Computacionales",
+      "email": "is715468@iteso.mx"
+}
+
+###
+
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
       "nombre": "Mauricio",
       "apellido": "Duran",
       "password": "mduranp",
@@ -9,6 +23,7 @@ Content-Type: application/json
       "carrera": "Ingeniería en Sistemas Computacionales",
       "email": "is716122@iteso.mx"
 }
+
 
 ###
 

@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const config = require('./mongodb-config.json');
 
-console.log(config.dbuser);
-console.log(config.dbpsw);
 
 
 let URI = `mongodb+srv://${config.dbuser}:${encodeURIComponent(config.dbpsw)}@${config.dbcluster}-syezl.mongodb.net/${config.dbname}?retryWrites=true&w=majority`;

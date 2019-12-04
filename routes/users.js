@@ -41,28 +41,12 @@ router.route('/')
                 newUser.numReviews = 0;
                 let max = 0;
 
-                let users = [];
-                
-                User.find({}, (err, docs) => {
-                    if(err) {
-                        console.log("Errors")
-                    }
-                    else {
-                        users = docs;
-                    }
-                });
+                let user = await User.findOne().sort({id: -1});
 
-                console.log(users);
-
-                if(users.length>0){
-                    User.findOne({}).sort(id, -1).run( function(err, doc) {
-                        if(err){
-                            console.log(err);
-                        } else{
-                            console.log(doc);
-                        }
-                     });
+                if(user!=null){
+                    max = user.id;
                 }
+
 
             newUser.id = max+1;
 
