@@ -2,13 +2,12 @@ POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "nombre":"Óscar",
-    "apellido":"González",
-    "correo":"t@t.com",
-    "url": "https://randomuser.me/api/portraits/men/8.jpg",
-    "sexo":"H",
-    "fecha":"1994-03-19",
-    "password":"123456"
+      "nombre": "Mauricio",
+      "apellido": "Duran",
+      "password": "mduranp",
+      "expediente": "716122",
+      "carrera": "Ingeniería en Sistemas Computacionales",
+      "email": "is716122@iteso.mx"
 }
 
 ###

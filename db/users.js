@@ -9,30 +9,39 @@ let userSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    correo: {
+    rol: {
         type: String,
         required: true
     },
-    url: {
-        type: String
-    },
-    sexo: {
-        type: String,
-        enum: ['M', 'H'],
-        required: true
-    },
-    fecha: {
-        type: Date,
+    numReviews: {
+        type: Number,
         required: true
     },
     password: {
         type: String,
         required: true
+    },
+    expediente: {
+        type: String,
+        required: true
+    },
+    carrera: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    id: {
+        type: Number,
+        required: true
     }
+},  {
+    versionKey: false // You should be aware of the outcome after set to false
 });
 
 userSchema.statics.addUser = function(user) {
-    console.log(user);
     let newUser = User(user);
     return newUser.save();
 }
