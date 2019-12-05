@@ -67,9 +67,7 @@ async function authAdminOps(req, res, next) {
         res.statusCode = 401;
         res.end();
     }
-    else if(req.method=='GET'){
-        next()
-    } else{
+    else{
         // Validar que el token sea válido
         if(req.user.rol=="Admin"){
             req.esAdmin = true;
