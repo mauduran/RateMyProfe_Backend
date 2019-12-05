@@ -21,7 +21,7 @@ let sugerienciaSchema = mongoose.Schema({
         type: Number, 
         required: true
     },
-    prepdescripcionaración: {
+    descripcion: {
         type: String,
         required: true
     },

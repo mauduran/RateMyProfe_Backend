@@ -16,6 +16,14 @@ router.route('/')
 
     })
     .post(async function (req, res) {
+        if(!req.esAdmin){
+
+            res.statusCode = 401;
+            res.end();
+            return;
+        }
+        
+
         let newUser = req.body;
 
         // Validar si vienen las propiedades
@@ -83,13 +91,25 @@ router.route('/:id')
         }
     });
 }).delete(async (req,res)=>{
-    await User.findOneAndDelete({id: req.params.id});
+    if(!req.esAdmin){
 
-    req.statusCode = 200;
-    res.end();
+        res.statusCode = 401;
+        res.end();
+        return;
+    }
+    
+    
+    let usr = await User.findOneAndDelete({id: req.params.id});
+
+    if(user){
+        req.statusCode = 200;
+        res.send(usr);
+    } else{
+        req.statusCode = 500;
+        res.send("Id no válido");
+    }
+
+
 });
-
-
-;
 
 module.exports = router;

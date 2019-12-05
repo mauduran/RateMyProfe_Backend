@@ -1,17 +1,3 @@
-POST http://localhost:3000/api/users
-Content-Type: application/json
-x-auth-user: EU4Pn0k5lh-1
-
-{
-      "nombre": "Omar",
-      "apellido": "Soto",
-      "password": "elOmi",
-      "expediente": "711111",
-      "carrera": "Ingeniería en Sistemas Computacionales",
-      "email": "ie711111@iteso.mx"
-}
-
-###
 
 POST http://localhost:3000/api/users
 Content-Type: application/json
@@ -30,11 +16,11 @@ x-auth-user: EU4Pn0k5lh-1
 ###
 
 GET http://localhost:3000/api/users/1
-x-auth-user: EU4Pn0k5lh-1
+x-auth-user: vv5bnxe68r-1
 ###
 
 DELETE  http://localhost:3000/api/users/4
-x-auth-user: EU4Pn0k5lh-1
+x-auth-user: vv5bnxe68r-1
 ###
 
 POST http://localhost:3000/api/login
@@ -51,12 +37,52 @@ POST http://localhost:3000/api/login
 Content-Type: application/json
 
 {
-    "email":"is716122@iteso.mx",
-    "password": "mduranp"
+    "email":"is715468@iteso.mx",
+    "password": "soyRule"
 }
 
 
 
 ###
 GET http://localhost:3000/api/users
-x-auth-user: EU4Pn0k5lh-1
+x-auth-user: Le140DmF5q-1
+
+
+###
+
+POST http://localhost:3000/api/profes
+Content-Type: application/json
+x-auth-user: Le140DmF5q-1
+
+{
+      "nombre": "Rodolfo Luthe",
+      "departamento": "Electrónica, Sistemas e Informática",
+      "añosExp": "1",
+      "materias": [],
+      "id": 1
+    }
+
+###
+
+GET http://localhost:3000/api/profes
+
+
+###
+
+GET http://localhost:3000/api/profes?departamento=Electrónica, Sistemas e Informática
+
+
+
+
+
+###
+
+DELETE http://localhost:3000/api/profes/2
+
+###
+PUT http://localhost:3000/api/profes/1
+Content-Type: application/json
+
+{
+      "nombre": "Oscar Luthe"
+}
