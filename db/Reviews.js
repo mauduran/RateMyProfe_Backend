@@ -1,8 +1,8 @@
 const mongoose = require('./mongodb-connect')
 
 let reviewSchema = mongoose.Schema({
-    nombre: {
-        expedienteEstudiante: Number,
+    expedienteEstudiante: {
+        type: String,
         required: true
     },
     profesor: {
