@@ -55,13 +55,12 @@ router.route('/')
 
 
 .post(async function (req, res) {
-
-  /*  if(!req.esAdmin){
-
+    console.log(req.esAdmin);
+    if(!req.esAdmin){
         res.statusCode = 401;
         res.end();
         return;
-    }*/
+    }
 
     let newMateria = req.body;
     // Validar si vienen las propiedades
