@@ -5,6 +5,7 @@ const app = express();
 const usersRouter = require('./routes/users');
 const loginRouter = require('./routes/login');
 const profesRouter = require('./routes/profes');
+const materiasRouter = require('./routes/materias');
 const User = require('./db/users')
 const Token = require('./db/token')
 
@@ -27,6 +28,7 @@ app.use('/api/profes', authAdminOps);
 app.use('/api/login', loginRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/profes', profesRouter);
+app.use('/api/materias', materiasRouter)
 
 
 app.listen(port, () => {

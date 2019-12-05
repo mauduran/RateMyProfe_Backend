@@ -86,3 +86,18 @@ Content-Type: application/json
 {
       "nombre": "Oscar Luthe"
 }
+
+
+###
+POST http://localhost:3000/api/Materias
+Content-Type: application/json
+
+{
+      "nombre": "Programación Estructurada",
+      "descripción": "Las ciencias de la computación es una disciplina muy joven comparada con otras, pero a pesar de su juventud el mundo entero depende de los sistemas de cómputo y de las aplicaciones de software que nos ayudan a llevar a cabo muchas de las actividades de la actualidad. El nivel de desarrollo de las diferentes disciplinas se debe en gran parte al uso de las computadoras y las aplicaciones de software.",
+      "creditos": "8",
+      "departamento": "Electrónica, Sistemas e Informática"
+}
+
+###
+GET http://localhost:3000/api/Materias
