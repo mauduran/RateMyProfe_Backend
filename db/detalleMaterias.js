@@ -45,6 +45,10 @@ let detalleMateriaSchema = mongoose.Schema({
         max: 5,
         required: true
     },
+    numReviews: {
+        type: String,
+        required: true
+    },
     id: {
         type: Number,
         required: true
