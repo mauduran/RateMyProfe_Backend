@@ -1,5 +1,6 @@
 POST http://localhost:3000/api/users
 Content-Type: application/json
+x-auth-user: EU4Pn0k5lh-1
 
 {
       "nombre": "Omar",
@@ -14,6 +15,7 @@ Content-Type: application/json
 
 POST http://localhost:3000/api/users
 Content-Type: application/json
+x-auth-user: EU4Pn0k5lh-1
 
 {
       "nombre": "Anahí",
@@ -27,7 +29,11 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/api/users/2
+GET http://localhost:3000/api/users/1
+x-auth-user: EU4Pn0k5lh-1
+###
+
+DELETE  http://localhost:3000/api/users/4
 x-auth-user: EU4Pn0k5lh-1
 ###
 
@@ -50,18 +56,7 @@ Content-Type: application/json
 }
 
 
-###
-
-POST http://localhost:3000/api/login
-Content-Type: application/json
-
-{
-    "email":"is715468@iteso.mx",
-    "password": "soyRule"
-}
-
 
 ###
-
 GET http://localhost:3000/api/users
 x-auth-user: EU4Pn0k5lh-1

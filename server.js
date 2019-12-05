@@ -1,11 +1,19 @@
 const express = require('express');
-const port = 3000;
+const port = process.env.PORT || 3000;
+// const cors = require('cors');
 const app = express();
 const usersRouter = require('./routes/users');
 const loginRouter = require('./routes/login');
 const User = require('./db/users')
 const Token = require('./db/token')
-// const mongo = require('./db/mongodb-connect');
+
+
+// let corsConfig = {
+//     origin: "https://ogonzale-project-front.herokuapp.com"
+// }
+// app.use(cors(corsConfig));
+
+
 
 app.use(express.json());
 
