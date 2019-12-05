@@ -88,6 +88,7 @@ Content-Type: application/json
 }
 
 
+###-----  MATERIAS -----####
 ###
 POST http://localhost:3000/api/Materias
 Content-Type: application/json
@@ -101,3 +102,18 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/api/Materias
+
+###
+GET http://localhost:3000/api/Materias/1
+
+###
+GET http://localhost:3000/api/Materias?nombre_like=os
+
+###
+GET http://localhost:3000/api/Materias?departamento=Ciencias
+
+###
+GET http://localhost:3000/api/Materias?nombre_like=os&departamento=Electrónica, Sistemas e Informática
+
+
+
