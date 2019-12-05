@@ -15,10 +15,10 @@ let departamentoSchema = mongoose.Schema({
 
 /*
 departamentoSchema.statics.addDepartamento = function(departamento) {
-    let newDepartamento = User(departamento);
+    let newDepartamento = Departamento(departamento);
     return newDepartamento.save();
 }*/
 
-let Departamento = mongoose.model('users', departamentoSchema);
+let Departamento = mongoose.model('departamentos', departamentoSchema);
 
 module.exports = Departamento;

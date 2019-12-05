@@ -1,21 +1,21 @@
 const mongoose = require('./mongodb-connect')
 
-let profeSchema = mongoose.Schema({
+let materiaSchema = mongoose.Schema({
     nombre: {
         type: String,
+        required: true
+    },
+    descripción: {
+        type: String,
+        required: true
+    },
+    creditos: {
+        type: Number,
         required: true
     },
     departamento: {
         type: String,
         required: true
-    },
-    añosExp: {
-        type: Number,
-        required: true
-    },
-    materias: {
-        type: [String],
-        required: false
     },
     id: {
         type: Number,
@@ -24,13 +24,12 @@ let profeSchema = mongoose.Schema({
 },  {
     versionKey: false // You should be aware of the outcome after set to false
 });
-
 /*
-profeSchema.statics.addProfe = function(profe) {
-    let newProfe = Profe(profe);
-    return newProfe.save();
+materiaSchema.statics.addMateria = function(materia) {
+    let newMateria = Materia(materia);
+    return newMateria.save();
 }*/
 
-let Profe = mongoose.model('profes', profeSchema);
+let Materia = mongoose.model('materias', materiaSchema);
 
-module.exports = Profe;
+module.exports = Materia;
