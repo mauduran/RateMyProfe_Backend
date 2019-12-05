@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Materia = require('../db/materias');
 
+
 router.route('/')
 
 .get((req, res) => {
