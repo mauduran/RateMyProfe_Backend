@@ -12,11 +12,6 @@ let carreraSchema = mongoose.Schema({
 },  {
     versionKey: false // You should be aware of the outcome after set to false
 });
-/*
-carreraSchema.statics.addCarrera = function(carrera) {
-    let newCarrera = Carrera(carrera);
-    return newCarrera.save();
-}*/
 
 let Carrera = mongoose.model('carreras', carreraSchema);
 
