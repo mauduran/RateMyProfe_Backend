@@ -25,10 +25,11 @@ let profeSchema = mongoose.Schema({
     versionKey: false // You should be aware of the outcome after set to false
 });
 
-userSchema.statics.addProfe = function(profe) {
+/*
+profeSchema.statics.addProfe = function(profe) {
     let newProfe = Profe(profe);
     return newProfe.save();
-}
+}*/
 
 let Profe = mongoose.model('profes', profeSchema);
 
