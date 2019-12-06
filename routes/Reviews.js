@@ -122,5 +122,17 @@ router.route('/')
     });
 
 
+    router.route('/:id')
+.get((req, res) => {
+    Review.findOne({id: req.params.id}, (err, doc) => {
+        if (err) {
+            res.statusCode = 500;
+            res.end();
+        } else {
+            res.statusCode = 200;
+            res.send(doc);
+        }
+    });
+});
 
 module.exports = router;
