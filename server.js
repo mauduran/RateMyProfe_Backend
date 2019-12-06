@@ -7,6 +7,7 @@ const loginRouter = require('./routes/login');
 const profesRouter = require('./routes/profes');
 const materiasRouter = require('./routes/materias');
 const carreraRouter = require('./routes/carreras');
+
 const User = require('./db/users')
 const Token = require('./db/token')
 
@@ -25,6 +26,9 @@ app.use('/api/users', authAdminOps);
 
 app.use('/api/profes', authMiddleware);
 app.use('/api/profes', authAdminOps);
+
+app.use('/api/materias', authMiddleware);
+app.use('/api/materias', authAdminOps);
 
 app.use('/api/login', loginRouter);
 app.use('/api/users', usersRouter);
@@ -72,6 +76,14 @@ async function authAdminOps(req, res, next) {
     }
     else{
         // Validar que el token sea válido
+        if(req.user.rol=="Coordinador"){
+            req.esCordi = true;
+            next();
+        } else {
+            req.esCordi = false;
+            next()
+        }
+        
         if(req.user.rol=="Admin"){
             req.esAdmin = true;
             next();
