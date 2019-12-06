@@ -6,6 +6,7 @@ const usersRouter = require('./routes/users');
 const loginRouter = require('./routes/login');
 const profesRouter = require('./routes/profes');
 const materiasRouter = require('./routes/materias');
+const detalleRouter = require('./routes/detalleMaterias1');
 const carreraRouter = require('./routes/carreras');
 const departamentoRouter = require('./routes/departamentos');
 const sugerenciasRouter = require('./routes/sugerencias');
@@ -30,14 +31,19 @@ app.use('/api/users', authAdminOps);
 app.use('/api/profes', authMiddleware);
 app.use('/api/profes', authAdminOps);
 
+
 app.use('/api/materias', authMiddleware);
 app.use('/api/materias', authAdminOps);
 
 app.use('/api/sugerencias', authMiddleware);
 app.use('/api/sugerencias', authAdminOps);
 
+app.use('/api/detalleMaterias', authMiddleware);
+app.use('/api/detalleMaterias', authAdminOps);
+
 app.use('/api/login', loginRouter);
 app.use('/api/users', usersRouter);
+app.use('/api/detalleMaterias', detalleMateriasRouter);
 app.use('/api/profes', profesRouter);
 app.use('/api/materias', materiasRouter);
 app.use('/api/carreras', carreraRouter);
@@ -77,12 +83,16 @@ async function authMiddleware(req, res, next) {
 
 
 async function authAdminOps(req, res, next) {
-    // console.log(req.logged);   
+    // console.log(req.logged); 
     if(!req.user && !req.logged && req.method!='GET') {
         res.statusCode = 401;
         res.end();
     }
     else{
+        if(req.method=='GET' && req.user==undefined){
+            next();
+            return;
+        }
         // Validar que el token sea válido
         if(req.user.rol=="Coordinador"){
             req.esCordi = true;
