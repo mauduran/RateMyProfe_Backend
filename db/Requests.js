@@ -46,6 +46,6 @@ requestSchema.statics.addUser = function(request) {
     return newRequest.save();
 }*/
 
-let User = mongoose.model('users', requestSchema);
+let Request = mongoose.model('requests', requestSchema);
 
-module.exports = User;
+module.exports = Request;

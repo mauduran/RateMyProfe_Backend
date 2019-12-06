@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../db/users');
+const Request = require('../db/Requests');
 
 router.route('/')
     .get((req, res) => {
@@ -11,7 +11,7 @@ router.route('/')
             return;
         }
         
-        User.find({}, (err, docs) => {
+        Request.find({}, (err, docs) => {
             if (err) {
                 res.statusCode = 500;
                 res.end();
@@ -23,28 +23,30 @@ router.route('/')
 
     })
     .post(async function (req, res) {
-        if(!req.esAdmin){
 
-            res.statusCode = 401;
-            res.end();
-            return;
-        }
-        
-
-        let newUser = req.body;
+        let newReq = req.body;
 
         // Validar si vienen las propiedades
-        if (!newUser.nombre || !newUser.apellido || !newUser.password || !newUser.expediente || !newUser.carrera || !newUser.email) {
+
+        // "nombre": "Pedro",
+        // "apellido": "Picapiedra",
+        // "rol": "Estudiante",
+        // "numReviews": "0",
+        // "password": "ppicapiedra",
+        // "expediente": "716122",
+        // "carrera": "Arquitectura",
+        // "email": "is717122@iteso.mx",
+        if (!newReq.nombre || !newReq.apellido || !newReq.rol || !newReq.numReviews || !newReq.password || !newReq.expediente || !newReq.carrera || !newReq.email) {
             res.statusCode = 400;
             res.send('Las propiedades requeridas son: Nombre, Apellido, Password, Expediente, Carrera y Correo ');
         } else {
             // Validar si existe un usuario con el mismo correo o nombres y apellidos
-            let sameEmailUser = await User.find({
-                email: newUser.email
+            let sameEmailUser = await Request.find({
+                email: newReq.email
             });
-            let sameNameUser = await User.find({
-                nombre: newUser.nombre,
-                apellido: newUser.apellido
+            let sameNameUser = await Request.find({
+                nombre: newReq.nombre,
+                apellido: newReq.apellido
             });
 
             if (sameEmailUser.length > 0) {
@@ -54,11 +56,11 @@ router.route('/')
                 res.statusCode = 400;
                 res.send('Ya existe un usuario con el mismo nombre');
             } else {
-                newUser.rol = "Estudiante";
-                newUser.numReviews = 0;
+                newReq.rol = "Estudiante";
+                newReq.numReviews = 0;
                 let max = 0;
 
-                let user = await User.findOne().sort({
+                let user = await Request.findOne().sort({
                     id: -1
                 });
 
@@ -67,10 +69,10 @@ router.route('/')
                 }
 
 
-                newUser.id = max + 1;
+                newReq.id = max + 1;
 
-                let userDocument = User(newUser);
-                userDocument.save()
+                let reqDocument = Request(newReq);
+                reqDocument.save()
                     .then(user => {
                         res.statusCode = 201;
                         res.send(user);
@@ -88,7 +90,7 @@ router.route('/')
 router.route('/:id')
 
 .get((req, res) => {
-    User.findOne({id: req.params.id}, (err, doc) => {
+    Request.findOne({id: req.params.id}, (err, doc) => {
         if (err) {
             res.statusCode = 500;
             res.end();
@@ -106,9 +108,9 @@ router.route('/:id')
     }
     
     
-    let usr = await User.findOneAndDelete({id: req.params.id});
+    let usr = await Request.findOneAndDelete({id: req.params.id});
 
-    if(user){
+    if(usr){
         req.statusCode = 200;
         res.send(usr);
     } else{

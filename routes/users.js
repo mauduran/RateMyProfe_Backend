@@ -108,7 +108,7 @@ router.route('/:id')
     
     let usr = await User.findOneAndDelete({id: req.params.id});
 
-    if(user){
+    if(usr){
         req.statusCode = 200;
         res.send(usr);
     } else{
