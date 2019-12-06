@@ -7,7 +7,7 @@ const loginRouter = require('./routes/login');
 const profesRouter = require('./routes/profes');
 const materiasRouter = require('./routes/materias');
 const carreraRouter = require('./routes/carreras');
-
+const sugerenciasRouter = require('./routes/sugerencias');
 
 
 const User = require('./db/users')
@@ -32,11 +32,15 @@ app.use('/api/profes', authAdminOps);
 app.use('/api/materias', authMiddleware);
 app.use('/api/materias', authAdminOps);
 
+app.use('/api/sugerencias', authMiddleware);
+app.use('/api/sugerencias', authAdminOps);
+
 app.use('/api/login', loginRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/profes', profesRouter);
 app.use('/api/materias', materiasRouter);
 app.use('/api/carreras', carreraRouter);
+app.use('/api/sugerencias', sugerenciasRouter);
 
 
 
