@@ -4,12 +4,12 @@ const Request = require('../db/Requests');
 
 router.route('/')
     .get((req, res) => {
-        if(!req.esAdmin){
+        // if(!req.esAdmin){
 
-            res.statusCode = 401;
-            res.end();
-            return;
-        }
+        //     res.statusCode = 401;
+        //     res.end();
+        //     return;
+        // }
         
         Request.find({}, (err, docs) => {
             if (err) {
@@ -100,12 +100,12 @@ router.route('/:id')
         }
     });
 }).delete(async (req,res)=>{
-    if(!req.esAdmin){
+    // if(!req.esAdmin){
 
-        res.statusCode = 401;
-        res.end();
-        return;
-    }
+    //     res.statusCode = 401;
+    //     res.end();
+    //     return;
+    // }
     
     
     let usr = await Request.findOneAndDelete({id: req.params.id});
