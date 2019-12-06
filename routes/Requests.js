@@ -26,16 +26,6 @@ router.route('/')
 
         let newReq = req.body;
 
-        // Validar si vienen las propiedades
-
-        // "nombre": "Pedro",
-        // "apellido": "Picapiedra",
-        // "rol": "Estudiante",
-        // "numReviews": "0",
-        // "password": "ppicapiedra",
-        // "expediente": "716122",
-        // "carrera": "Arquitectura",
-        // "email": "is717122@iteso.mx",
         if (!newReq.nombre || !newReq.apellido || !newReq.rol || !newReq.numReviews || !newReq.password || !newReq.expediente || !newReq.carrera || !newReq.email) {
             res.statusCode = 400;
             res.send('Las propiedades requeridas son: Nombre, Apellido, Password, Expediente, Carrera y Correo ');

@@ -29,8 +29,6 @@ app.use(express.json());
 app.use('/api/users', authMiddleware);
 app.use('/api/users', authAdminOps);
 
-app.use('/api/requests', authMiddleware);
-app.use('/api/requests', authAdminOps);
 
 app.use('/api/profes', authMiddleware);
 app.use('/api/profes', authAdminOps);
