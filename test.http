@@ -147,3 +147,21 @@ x-auth-user: lm7Ow3nIda-3
 ###
 DELETE  http://localhost:3000/api/sugerencias/2
 x-auth-user: UPIqfGzO8g-1
+
+########################### Detalle Materias #################################
+###
+POST http://localhost:3000/api/detalleMaterias
+Content-Type: application/json
+//x-auth-user: UGYQ1QmyNd-1
+
+{
+    "profesor": "Oscar Luthe",
+    "materia": "Gestión de bases de datos",
+    "numReviews": "0",
+    "experiencia general": "0",
+    "dificultad": "0",
+    "preparación": "0",
+    "carga trabajo": "0",
+    "flexibilidad": "0",
+    "ritmo": "0"
+}
