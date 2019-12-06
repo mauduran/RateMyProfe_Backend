@@ -7,6 +7,8 @@ const loginRouter = require('./routes/login');
 const profesRouter = require('./routes/profes');
 const materiasRouter = require('./routes/materias');
 const carreraRouter = require('./routes/carreras');
+const carreraRouter = require('./routes/carreras');
+
 
 const User = require('./db/users')
 const Token = require('./db/token')
@@ -79,18 +81,15 @@ async function authAdminOps(req, res, next) {
         if(req.user.rol=="Coordinador"){
             req.esCordi = true;
             next();
-        } else {
-            req.esCordi = false;
-            next()
-        }
-        
-        if(req.user.rol=="Admin"){
+        } 
+        else if(req.user.rol=="Admin"){
             req.esAdmin = true;
             next();
         }
         else {
             req.esAdmin = false;
-            next()
+            req.esCordi = false;
+            next();
         }        
     }
 }
