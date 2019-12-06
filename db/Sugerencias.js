@@ -44,4 +44,4 @@ sugerienciaSchema.statics.addSugerencia = function(sugerencia) {
 
 let Sugerencia = mongoose.model('Sugerencias', sugerienciaSchema);
 
-module.exports = User;
+module.exports = Sugerencia;
