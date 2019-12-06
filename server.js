@@ -7,6 +7,7 @@ const loginRouter = require('./routes/login');
 const profesRouter = require('./routes/profes');
 const materiasRouter = require('./routes/materias');
 const carreraRouter = require('./routes/carreras');
+const departamentoRouter = require('./routes/departamentos');
 const sugerenciasRouter = require('./routes/sugerencias');
 
 
@@ -40,6 +41,7 @@ app.use('/api/users', usersRouter);
 app.use('/api/profes', profesRouter);
 app.use('/api/materias', materiasRouter);
 app.use('/api/carreras', carreraRouter);
+app.use('/api/departamentos', departamentoRouter);
 app.use('/api/sugerencias', sugerenciasRouter);
 
 

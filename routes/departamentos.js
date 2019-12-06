@@ -44,15 +44,15 @@ router.route('/')
         }else {
 
             let max = 0;
-            let materia = await Departamentos.findOne().sort({  id: -1 });
+            let departamento = await Departamentos.findOne().sort({  id: -1 });
 
-            if (materia != null) {
-                max = materia.id;
+            if (departamento != null) {
+                max = departamento.id;
             }
 
             newDepartamento.id = max + 1;
 
-            let departamentosDocument = Departamentos(newCarrera);
+            let departamentosDocument = Departamentos(newDepartamento);
             departamentosDocument.save()
                 .then(depto => {
                     res.statusCode = 201;
@@ -66,4 +66,15 @@ router.route('/')
     }
 });
 
+
+router.route('/:id').delete(async (req, res)=>{
+    let dpto = await Departamentos.findOneAndDelete({id: req.params.id});
+    if(dpto){
+        req.statusCode = 200;
+        res.send(dpto);
+    } else{
+        req.statusCode = 500;
+        res.send("Id no válido");
+    }
+});
 module.exports = router;
