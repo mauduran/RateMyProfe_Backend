@@ -9,7 +9,7 @@ const materiasRouter = require('./routes/materias');
 const carreraRouter = require('./routes/carreras');
 const departamentoRouter = require('./routes/departamentos');
 const sugerenciasRouter = require('./routes/sugerencias');
-
+const detalleMateriasRouter = require('./routes/detalleMaterias');
 
 const User = require('./db/users')
 const Token = require('./db/token')
@@ -43,7 +43,7 @@ app.use('/api/materias', materiasRouter);
 app.use('/api/carreras', carreraRouter);
 app.use('/api/departamentos', departamentoRouter);
 app.use('/api/sugerencias', sugerenciasRouter);
-
+app.use('/api/detalleMaterias', detalleMateriasRouter);
 
 
 app.listen(port, () => {
