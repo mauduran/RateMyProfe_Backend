@@ -122,6 +122,10 @@ GEt http://localhost:3001/api/detalleMaterias
 ###
 GEt http://localhost:3001/api/reviews
 
+###
+
+GET http://localhost:3001/api/reviews?profesor=Oscar González&materia=Desarrollo Web
+
 
 ###
 POST http://localhost:3001/api/reviews
@@ -142,6 +146,29 @@ x-auth-user: Tyt7nG2kWJ-1
       "Optativa": "No",
       "Reseña": "Excelente clase, recomendada 100%"
 }
+
+###
+DELETE  http://localhost:3001/api/requests/1
+x-auth-user: R1nsWwagQM-1
+###
+
+POST http://localhost:3001/api/requests
+Content-Type: application/json
+x-auth-user: R1nsWwagQM-1
+
+{
+       "nombre": "Pedro",
+       "apellido": "Picapiedra",
+       "rol": "Estudiante",
+       "numReviews": "0",
+       "password": "ppicapiedra",
+      "expediente": "716122",
+      "carrera": "Arquitectura",
+      "email": "is717122@iteso.mx"
+}
+
+
+
 
 
 ###
