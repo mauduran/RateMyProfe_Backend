@@ -41,6 +41,9 @@ app.use('/api/sugerencias', authAdminOps);
 app.use('/api/detalleMaterias', authMiddleware);
 app.use('/api/detalleMaterias', authAdminOps);
 
+
+app.use('/api/reviews', authMiddleware);
+
 app.use('/api/login', loginRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/detalleMaterias', detalleMateriasRouter);

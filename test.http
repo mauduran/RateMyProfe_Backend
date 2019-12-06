@@ -114,15 +114,6 @@ Content-Type: application/json
       "nombre": "frutas y verduras"
 }
 
-###
-POST http://localhost:3001/api/detalleMaterias
-Content-Type: application/json
-x-auth-user: Tyt7nG2kWJ-1
-
-{
-      "profesor": "Oscar González",
-      "materia": "Desarrollo Web"
-}
 
 
 ###
@@ -138,16 +129,27 @@ Content-Type: application/json
 x-auth-user: Tyt7nG2kWJ-1
 
 {
-      "expedienteEstudiante": "716122",
+      "expedienteEstudiante": "705122",
       "profesor": "Oscar González",
       "materia": "Desarrollo Web",
-      "experienciaGeneral": "5",
-      "dificultad": "4",
-      "preparación": "3",
-      "cargaTrabajo": "2",
-      "flexibilidad": "1",
-      "ritmo": "3",
+      "experienciaGeneral": 3,
+      "dificultad": 3,
+      "preparación": 2,
+      "cargaTrabajo": 1,
+      "flexibilidad": 1,
+      "ritmo": 1,
       "takeAgain": "Si",
       "Optativa": "No",
       "Reseña": "Excelente clase, recomendada 100%"
+}
+
+
+###
+POST http://localhost:3001/api/detalleMaterias
+Content-Type: application/json
+x-auth-user: Tyt7nG2kWJ-1
+
+{
+      "profesor": "Oscar González",
+      "materia": "Desarrollo Web"
 }
