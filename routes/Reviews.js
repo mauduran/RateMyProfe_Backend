@@ -133,6 +133,20 @@ router.route('/')
             res.send(doc);
         }
     });
+})
+.delete(async (req,res)=>{
+
+    let usr = await Review.findOneAndDelete({id: req.params.id});
+
+    if(user){
+        req.statusCode = 200;
+        res.send(usr);
+    } else{
+        req.statusCode = 500;
+        res.send("Id no válido");
+    }
+
+
 });
 
 module.exports = router;
