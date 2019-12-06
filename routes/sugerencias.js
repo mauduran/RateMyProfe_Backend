@@ -4,7 +4,7 @@ const Sugerencias = require('../db/Sugerencias');
 
 router.route('/')
     .get((req, res) => {
-        if(!req.esCordi){
+        if(!req.esAdmin){
 
             res.statusCode = 401;
             res.end();
