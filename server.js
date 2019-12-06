@@ -7,7 +7,7 @@ const loginRouter = require('./routes/login');
 const profesRouter = require('./routes/profes');
 const materiasRouter = require('./routes/materias');
 const carreraRouter = require('./routes/carreras');
-const carreraRouter = require('./routes/carreras');
+
 
 
 const User = require('./db/users')
