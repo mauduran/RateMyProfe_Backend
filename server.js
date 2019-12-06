@@ -11,6 +11,7 @@ const departamentoRouter = require('./routes/departamentos');
 const sugerenciasRouter = require('./routes/sugerencias');
 const detalleMateriasRouter = require('./routes/detalleMaterias');
 const reviewRouter = require('./routes/Reviews');
+const requestRouter = require('./routes/Requests');
 
 const User = require('./db/users')
 const Token = require('./db/token')
@@ -27,6 +28,9 @@ app.use(express.json());
 
 app.use('/api/users', authMiddleware);
 app.use('/api/users', authAdminOps);
+
+app.use('/api/requests', authMiddleware);
+app.use('/api/requests', authAdminOps);
 
 app.use('/api/profes', authMiddleware);
 app.use('/api/profes', authAdminOps);
@@ -54,6 +58,7 @@ app.use('/api/departamentos', departamentoRouter);
 app.use('/api/sugerencias', sugerenciasRouter);
 app.use('/api/detalleMaterias', detalleMateriasRouter);
 app.use('/api/reviews', reviewRouter);
+app.use('/api/requests', requestRouter);
 
 
 app.listen(port, () => {
