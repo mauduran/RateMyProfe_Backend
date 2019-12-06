@@ -129,7 +129,7 @@ Content-Type: application/json
 x-auth-user: Tyt7nG2kWJ-1
 
 {
-      "expedienteEstudiante": "705122",
+      "expedienteEstudiante": "712342",
       "profesor": "Oscar González",
       "materia": "Desarrollo Web",
       "experienciaGeneral": 3,

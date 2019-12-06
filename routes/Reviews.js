@@ -21,6 +21,18 @@ router.route('/')
                     return;
                 }
             });
+        } else if(req.query.profesor && req.query.materia){
+
+            Review.find({profesor:req.query.profesor , materia: req.query.materia} , (err, docs) => {
+                if (err) {
+                    res.statusCode = 500;
+                    res.end();
+                } else {
+                    res.statusCode = 200;
+                    res.send(docs);
+                    return;
+                }
+            });
         } else{
             Review.find({}, (err, docs) => {
                 if (err) {
