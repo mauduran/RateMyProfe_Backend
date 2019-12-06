@@ -117,8 +117,10 @@ GET http://localhost:3000/api/Materias?departamento=Ciencias
 GET http://localhost:3000/api/Materias?nombre_like=os&departamento=Electrónica, Sistemas e Informática
 
 
-######## SUGERENCIAS #########
+
+########################### SUGERENCIAS #################################
 ###
+
 POST http://localhost:3000/api/login
 Content-Type: application/json
 
@@ -127,23 +129,21 @@ Content-Type: application/json
     "password": "aSantana"
 }
 
-
-
 ###
-GET http://localhost:3000/api/sugerencias
-x-auth-user: oJlVjGTabh-3
 
-###
-POST http://localhost:3000/api/sugerencias
+POST http://localhost:3000/api/login
 Content-Type: application/json
-x-auth-user: oJlVjGTabh-3
-    
+
 {
-      "expedienteEstudiante": "715772",
-      "profesor": "Elsa Perez",
-      "materia": "Sexualidad y Sociedad",
-      "Reseña": "Mucha lectura pero muy interesante.",
-      "idReseña": 4,
-      "descripcion": "No me gusta",
-      "rol": "Coordinador"
+    "email":"is715468@iteso.mx",
+    "password": "soyRule"
 }
+
+###
+GET  http://localhost:3000/api/sugerencias
+x-auth-user: lm7Ow3nIda-3
+
+
+###
+DELETE  http://localhost:3000/api/sugerencias/2
+x-auth-user: UPIqfGzO8g-1
