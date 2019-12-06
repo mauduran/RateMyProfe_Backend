@@ -1,6 +1,6 @@
 const express = require('express');
 const port = process.env.PORT || 3001;
-// const cors = require('cors');
+const cors = require('cors');
 const app = express();
 const usersRouter = require('./routes/users');
 const loginRouter = require('./routes/login');
@@ -17,10 +17,10 @@ const User = require('./db/users')
 const Token = require('./db/token')
 
 
-// let corsConfig = {
-//     origin: "https://ogonzale-project-front.herokuapp.com"
-// }
-// app.use(cors(corsConfig));
+let corsConfig = {
+    origin: "*"
+}
+app.use(cors(corsConfig));
 
 
 

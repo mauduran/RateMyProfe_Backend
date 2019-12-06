@@ -6,12 +6,14 @@ const randomize = require('randomatic');
 
 router.route('/')
     .post(async (req, res) => {
+        console.log(req.body);
         // Programar aquí lógica de token
         let users = await User.find({
             email: req.body.email,
             password: req.body.password
         });
 
+        console.log(users);
         if (users!=[]) {
             if (users.length > 0) {
                 let user = users[0];
