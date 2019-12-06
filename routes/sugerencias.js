@@ -98,5 +98,29 @@ router.route('/')
     })
     ;
 
-module.exports = router;
+router.route('/:id')
+    .delete(async (req,res)=>{
+        if(!req.esAdmin){
+    
+            res.statusCode = 401;
+            res.end();
+            return;
+        }
+        
+        
+        let sugr = await Sugerencias.findOneAndDelete({id: req.params.id});
+    
+        if(sugr){
+            req.statusCode = 200;
+            res.send(sugr);
+        } else{
+            req.statusCode = 500;
+            res.send("Id no válido");
+        }
+    
+    
+    });
 
+    module.exports = router;
+    
+    
