@@ -126,4 +126,28 @@ x-auth-user: Tyt7nG2kWJ-1
 
 
 ###
-GEt http://localhost:3001/api/detalleMaterias?profesor=Oscar González&materia=Desarrollo Web
+GEt http://localhost:3001/api/detalleMaterias
+
+###
+GEt http://localhost:3001/api/reviews
+
+
+###
+POST http://localhost:3001/api/reviews
+Content-Type: application/json
+x-auth-user: Tyt7nG2kWJ-1
+
+{
+      "expedienteEstudiante": "716122",
+      "profesor": "Oscar González",
+      "materia": "Desarrollo Web",
+      "experienciaGeneral": "5",
+      "dificultad": "4",
+      "preparación": "3",
+      "cargaTrabajo": "2",
+      "flexibilidad": "1",
+      "ritmo": "3",
+      "takeAgain": "Si",
+      "Optativa": "No",
+      "Reseña": "Excelente clase, recomendada 100%"
+}

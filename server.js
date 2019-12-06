@@ -6,11 +6,11 @@ const usersRouter = require('./routes/users');
 const loginRouter = require('./routes/login');
 const profesRouter = require('./routes/profes');
 const materiasRouter = require('./routes/materias');
-const detalleRouter = require('./routes/detalleMaterias1');
 const carreraRouter = require('./routes/carreras');
 const departamentoRouter = require('./routes/departamentos');
 const sugerenciasRouter = require('./routes/sugerencias');
 const detalleMateriasRouter = require('./routes/detalleMaterias');
+const reviewRouter = require('./routes/Reviews');
 
 const User = require('./db/users')
 const Token = require('./db/token')
@@ -50,6 +50,7 @@ app.use('/api/carreras', carreraRouter);
 app.use('/api/departamentos', departamentoRouter);
 app.use('/api/sugerencias', sugerenciasRouter);
 app.use('/api/detalleMaterias', detalleMateriasRouter);
+app.use('/api/reviews', reviewRouter);
 
 
 app.listen(port, () => {

@@ -50,11 +50,11 @@ let reviewSchema = mongoose.Schema({
         required: true
     },
     takeAgain: {
-        type: Boolean,
+        type: String,
         required: true
     },
     Optativa: {
-        type: Boolean,
+        type: String,
         required: true
     },
     Reseña: {

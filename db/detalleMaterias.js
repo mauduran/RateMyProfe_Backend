@@ -34,7 +34,7 @@ let detalleMateriaSchema = mongoose.Schema({
         required: true
     },
     flexibilidad: {
-        type: String,
+        type: Number,
         min: 0,
         max: 5,
         required: true
@@ -46,7 +46,7 @@ let detalleMateriaSchema = mongoose.Schema({
         required: true
     },
     numReviews: {
-        type: String,
+        type: Number,
         required: true
     },
     id: {
