@@ -4,12 +4,6 @@ const User = require('../db/users');
 
 router.route('/')
     .get((req, res) => {
-        if(!req.esAdmin){
-
-            res.statusCode = 401;
-            res.end();
-            return;
-        }
         
         User.find({}, (err, docs) => {
             if (err) {
