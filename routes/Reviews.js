@@ -23,7 +23,7 @@ router.route('/')
             });
         } else if(req.query.profesor && req.query.materia){
 
-            Review.find({profesor:req.query.profesor , materia: req.query.materia} , (err, docs) => {
+            Review.find({profesor:"Profe" , materia: req.query.materia} , (err, docs) => {
                 if (err) {
                     res.statusCode = 502;
                     res.end();
