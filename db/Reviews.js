@@ -59,7 +59,6 @@ let reviewSchema = mongoose.Schema({
     },
     Reseña: {
         type: String,
-        required: true
     },
     id: {
         type: Number,
