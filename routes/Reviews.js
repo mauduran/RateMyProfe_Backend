@@ -72,7 +72,7 @@ router.route('/')
 
             if (sameDetalle.length > 0) {
                 res.statusCode = 400;
-                res.send('Ya existe un detalle con los mismos datos');
+                res.send(sameDetalle);
             } else {
 
                 let max = 0;
