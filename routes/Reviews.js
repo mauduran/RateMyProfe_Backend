@@ -117,7 +117,7 @@ router.route('/')
                     .catch(reason => {
                         res.statusCode = 504;
                         //
-                        res.send(detalle);
+                        res.send(newDetalle);
                         //
                         res.end();
                     });
