@@ -34,7 +34,7 @@ router.route('/')
                 }
             });
         } else{
-            Review.find({}, (err, docs) => {
+            Review.find({profesor:"Profe"}, (err, docs) => {
                 if (err) {
                     res.statusCode = 503;
                     res.end();
