@@ -50,7 +50,7 @@ router.route('/')
     })
      .post(async function (req, res) {
         if (!req.logged) {
-            res.status = 401;
+            res.status = 400;
             res.end();
             return;
         }
@@ -59,8 +59,9 @@ router.route('/')
         if (!newDetalle.expedienteEstudiante || !newDetalle.profesor || !newDetalle.materia || !newDetalle.experienciaGeneral || !newDetalle.dificultad ||
             !newDetalle.preparación || !newDetalle.cargaTrabajo || !newDetalle.flexibilidad || !newDetalle.ritmo ||
             !newDetalle.takeAgain || !newDetalle.Optativa || !newDetalle.Reseña) {
+            
             res.statusCode = 402;
-            res.send('Las propiedades requeridas son: Profesor y Materia');
+            res.send(req.body);
         } else {
             // Validar si existe el departamento
             let sameDetalle = await Review.find({
@@ -70,7 +71,7 @@ router.route('/')
             });
 
             if (sameDetalle.length > 0) {
-                res.statusCode = 403;
+                res.statusCode = 400;
                 res.send('Ya existe un detalle con los mismos datos');
             } else {
 
