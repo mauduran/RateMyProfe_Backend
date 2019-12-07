@@ -58,7 +58,7 @@ router.route('/')
         // Validar si vienen las propiedades
         if (!newDetalle.expedienteEstudiante || !newDetalle.profesor || !newDetalle.materia || !newDetalle.experienciaGeneral || !newDetalle.dificultad ||
             !newDetalle.preparación || !newDetalle.cargaTrabajo || !newDetalle.flexibilidad || !newDetalle.ritmo ||
-            !newDetalle.takeAgain || !newDetalle.Optativa || !newDetalle.Reseña) {
+            !newDetalle.takeAgain || !newDetalle.Optativa) {
             
             res.statusCode = 402;
             res.send(req.body);
