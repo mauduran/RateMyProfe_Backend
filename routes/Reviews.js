@@ -59,7 +59,7 @@ router.route('/')
         if (!newDetalle.expedienteEstudiante || !newDetalle.profesor || !newDetalle.materia || !newDetalle.experienciaGeneral || !newDetalle.dificultad ||
             !newDetalle.preparación || !newDetalle.cargaTrabajo || !newDetalle.flexibilidad || !newDetalle.ritmo ||
             !newDetalle.takeAgain || !newDetalle.Optativa || !newDetalle.Reseña) {
-            res.statusCode = 400;
+            res.statusCode = 402;
             res.send('Las propiedades requeridas son: Profesor y Materia');
         } else {
             // Validar si existe el departamento
@@ -70,7 +70,7 @@ router.route('/')
             });
 
             if (sameDetalle.length > 0) {
-                res.statusCode = 400;
+                res.statusCode = 403;
                 res.send('Ya existe un detalle con los mismos datos');
             } else {
 
@@ -91,7 +91,7 @@ router.route('/')
                     materia: newDetalle.materia
                 });
 
-                console.log(detail.numReviews);
+                // console.log(detail.numReviews);
                 detail.experienciaGeneral = ((detail.experienciaGeneral * detail.numReviews + newDetalle.experienciaGeneral) / (detail.numReviews + 1)).toFixed(1);
                 detail.dificultad = ((detail.dificultad * detail.numReviews + newDetalle.dificultad) / (detail.numReviews + 1)).toFixed(1);
                 detail.preparación = ((detail.preparación * detail.numReviews + newDetalle.preparación) / (detail.numReviews + 1)).toFixed(1);

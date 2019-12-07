@@ -17,10 +17,10 @@ const User = require('./db/users')
 const Token = require('./db/token')
 
 
-let corsConfig = {
-    origin: "*"
-}
-app.use(cors(corsConfig));
+// let corsConfig = {
+//     origin: "*"
+// }
+app.use(cors());
 
 
 

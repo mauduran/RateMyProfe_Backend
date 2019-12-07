@@ -55,7 +55,7 @@ router.route('/')
 
 
 .post(async function (req, res) {
-    console.log(req.esAdmin);
+    // console.log(req.esAdmin);
     if(!req.esAdmin){
         res.statusCode = 401;
         res.end();
@@ -64,10 +64,13 @@ router.route('/')
 
     let newMateria = req.body;
     // Validar si vienen las propiedades
-    if (!newMateria.nombre || !newMateria.descripción || !newMateria.creditos || !newMateria.departamento ) {
+    if (!newMateria.nombre || !newMateria.creditos || !newMateria.departamento ) {
         res.statusCode = 400;
         res.send('Las propiedades requeridas son: Nombre, Descripción, Creditos y Departamento.');
     } else {
+        if(newMateria.descripción==undefined){
+            newMateria.descripción = "lorem";
+        }
         // Validar si existe el departamento
         let sameMateria = await Materia.find({
             nombre: newMateria.nombre
