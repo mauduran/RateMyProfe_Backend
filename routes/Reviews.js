@@ -38,9 +38,9 @@ router.route('/')
                     res.end();
                 } else {
                     res.statusCode = 200;
-                    // res.send(docs);
+                    res.send(docs);
                     // 
-                    res.send(req.query);
+                    // res.send(req.query);
                     // 
                 }
             });
