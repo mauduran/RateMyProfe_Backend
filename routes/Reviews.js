@@ -7,7 +7,7 @@ router.route('/')
 
     .get((req, res) => {
         // GET Reviews?expedienteEstudiante=””&profesor””&Materia=””
-
+        alert(req.query);
 
         if(req.query.expedienteEstudiante && req.query.profesor && req.query.materia){
 
