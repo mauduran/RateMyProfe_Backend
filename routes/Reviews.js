@@ -13,7 +13,7 @@ router.route('/')
 
             Review.find({expedienteEstudiante:req.query.expedienteEstudiante,  profesor:req.query.profesor , materia: req.query.materia} , (err, docs) => {
                 if (err) {
-                    res.statusCode = 500;
+                    res.statusCode = 501;
                     res.end();
                 } else {
                     res.statusCode = 200;
@@ -25,7 +25,7 @@ router.route('/')
 
             Review.find({profesor:req.query.profesor , materia: req.query.materia} , (err, docs) => {
                 if (err) {
-                    res.statusCode = 500;
+                    res.statusCode = 502;
                     res.end();
                 } else {
                     res.statusCode = 200;
@@ -36,7 +36,7 @@ router.route('/')
         } else{
             Review.find({}, (err, docs) => {
                 if (err) {
-                    res.statusCode = 500;
+                    res.statusCode = 503;
                     res.end();
                 } else {
                     res.statusCode = 200;
@@ -60,7 +60,7 @@ router.route('/')
             !newDetalle.preparación || !newDetalle.cargaTrabajo || !newDetalle.flexibilidad || !newDetalle.ritmo ||
             !newDetalle.takeAgain || !newDetalle.Optativa) {
             
-            res.statusCode = 402;
+            res.statusCode = 401;
             res.send(req.body);
         } else {
             // Validar si existe el departamento
@@ -115,7 +115,7 @@ router.route('/')
                         res.send(detalle);
                     })
                     .catch(reason => {
-                        res.statusCode = 500;
+                        res.statusCode = 504;
                         res.end();
                     });
             }
