@@ -11,7 +11,7 @@ router.route('/')
 
         if(req.query.expedienteEstudiante && req.query.profesor && req.query.materia){
 
-            Review.find({expedienteEstudiante:123456,  profesor:req.query.profesor , materia: req.query.materia} , (err, docs) => {
+            Review.find({expedienteEstudiante:"Arturo",  profesor:req.query.profesor , materia: req.query.materia} , (err, docs) => {
                 if (err) {
                     res.statusCode = 501;
                     res.end();
