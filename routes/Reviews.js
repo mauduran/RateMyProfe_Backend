@@ -6,8 +6,6 @@ const Detalle = require('../db/detalleMaterias');
 router.route('/')
 
     .get((req, res) => {
-        // GET Reviews?expedienteEstudiante=””&profesor””&Materia=””
-        alert(req.query);
 
         if(req.query.expedienteEstudiante && req.query.profesor && req.query.materia){
 
@@ -40,7 +38,10 @@ router.route('/')
                     res.end();
                 } else {
                     res.statusCode = 200;
-                    res.send(docs);
+                    // res.send(docs);
+                    // 
+                    res.send(req.query);
+                    // 
                 }
             });
         }
