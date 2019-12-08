@@ -144,6 +144,39 @@ router.route('/')
     let usr = await Review.findOneAndDelete({id: req.params.id});
 
     if(usr){
+        detail = await Detalle.findOne({
+            profesor: newDetalle.profesor,
+            materia: newDetalle.materia
+        });
+    
+        // console.log(detail.numReviews);
+        if (detail.numReviews-1==0){
+            detail.experienciaGeneral = 0;
+            detail.dificultad = 0;
+            detail.preparación = 0;
+            detail.cargaTrabajo = 0;
+            detail.flexibilidad =0;
+            detail.ritmo = 0;
+            detail.numReviews = 0;
+        }else{
+
+            detail.experienciaGeneral = ((detail.experienciaGeneral * detail.numReviews - newDetalle.experienciaGeneral) / (detail.numReviews - 1)).toFixed(1);
+            detail.dificultad = ((detail.dificultad * detail.numReviews - newDetalle.dificultad) / (detail.numReviews - 1)).toFixed(1);
+            detail.preparación = ((detail.preparación * detail.numReviews - newDetalle.preparación) / (detail.numReviews - 1)).toFixed(1);
+            detail.cargaTrabajo = ((detail.cargaTrabajo * detail.numReviews - newDetalle.cargaTrabajo) / (detail.numReviews - 1)).toFixed(1);
+            detail.flexibilidad = ((detail.flexibilidad * detail.numReviews - newDetalle.flexibilidad) / (detail.numReviews - 1)).toFixed(1);
+            detail.ritmo = ((detail.ritmo * detail.numReviews - newDetalle.ritmo) / (detail.numReviews - 1)).toFixed(1);
+            detail.numReviews -= 1;
+        
+        }
+
+        await Detalle.findOneAndUpdate({
+            profesor: newDetalle.profesor,
+            materia: newDetalle.materia
+        }, detail, {
+            new: true
+        });
+
         req.statusCode = 200;
         res.send(usr);
     } else{
@@ -151,6 +184,7 @@ router.route('/')
         res.send("Id no válido");
     }
 
+    
 
 });
 

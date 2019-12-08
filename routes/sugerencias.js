@@ -30,8 +30,7 @@ router.route('/')
                 return;
         }
         let newSugerencia = req.body;
-        if(!newSugerencia.expedienteEstudiante || !newSugerencia.profesor || !newSugerencia.materia ||
-           !newSugerencia.Reseña || !newSugerencia.idReseña || !newSugerencia.descripcion || !newSugerencia.rol){
+        if(!newSugerencia.expedienteEstudiante || !newSugerencia.profesor || !newSugerencia.materia  || !newSugerencia.idReseña || !newSugerencia.descripcion || !newSugerencia.rol){
             res.statusCode = 400;
             res.send('Las propiedades requeridas son: expedienteEstudiante, profesor, materia, Reseña, idReseña, descripcion y rol'); 
            }else{
