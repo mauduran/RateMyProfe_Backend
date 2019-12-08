@@ -25,6 +25,7 @@ router.route('/')
     .post(async function (req, res) {
         console.log(req.esCordi);
         if(!req.esCordi){
+            console.log("end");
                 res.statusCode = 401;
                 res.end();
                 return;
