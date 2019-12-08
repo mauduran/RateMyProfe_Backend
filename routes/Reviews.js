@@ -178,7 +178,7 @@ router.route('/')
         });
 
         req.statusCode = 200;
-        res.send(usr);
+        res.send(detail);
     } else{
         req.statusCode = 500;
         res.send("Id no válido");
