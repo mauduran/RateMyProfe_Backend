@@ -15,7 +15,6 @@ let sugerienciaSchema = mongoose.Schema({
     },
     Reseña: {  
         type: String,
-        required: true
     },
     idReseña: {
         type: Number, 
