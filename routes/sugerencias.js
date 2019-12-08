@@ -28,10 +28,7 @@ router.route('/')
                 res.statusCode = 401;
                 res.end();
                 return;
-        }else{
-            console.log("hola");
         }
-
         let newSugerencia = req.body;
         if(!newSugerencia.expedienteEstudiante || !newSugerencia.profesor || !newSugerencia.materia ||
            !newSugerencia.Reseña || !newSugerencia.idReseña || !newSugerencia.descripcion || !newSugerencia.rol){
