@@ -28,6 +28,8 @@ router.route('/')
                 res.statusCode = 401;
                 res.end();
                 return;
+        }else{
+            console.log("hola");
         }
 
         let newSugerencia = req.body;
