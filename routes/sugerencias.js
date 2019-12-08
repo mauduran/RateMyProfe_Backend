@@ -22,42 +22,8 @@ router.route('/')
         })
     })
 
-    /*
-    expedienteEstudiante: {
-        type: String,
-        required: true
-    },
-    profesor: {
-        type: String,
-        required: true
-    },
-    materia: {
-        type: String,
-        required: true
-    },
-    Reseña: {  
-        type: String,
-        required: true
-    },
-    idReseña: {
-        type: Number, 
-        required: true
-    },
-    descripcion: {
-        type: String,
-        required: true
-    },
-    rol: {  //Se quitó el espacio
-        type: String,
-        required: true
-    },
-    id: {
-        type: Number,
-        required: true
-    }
-},  {
-    */
     .post(async function (req, res) {
+        console.log(req.esCordi);
         if(!req.esCordi){
                 res.statusCode = 401;
                 res.end();
