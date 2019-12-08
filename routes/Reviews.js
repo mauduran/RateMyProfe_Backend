@@ -145,8 +145,8 @@ router.route('/')
 
     if(usr){
         detail = await Detalle.findOne({
-            profesor: newDetalle.profesor,
-            materia: newDetalle.materia
+            profesor: usr.profesor,
+            materia: usr.materia
         });
     
         // console.log(detail.numReviews);
@@ -171,8 +171,8 @@ router.route('/')
         }
 
         await Detalle.findOneAndUpdate({
-            profesor: newDetalle.profesor,
-            materia: newDetalle.materia
+            profesor: usr.profesor,
+            materia: usr.materia
         }, detail, {
             new: true
         });
